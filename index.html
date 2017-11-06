@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html> 
+	<head>
+		<script>
+			function changeDesc(txt) {
+				document.getElementById("desc").innerHTML = txt;
+			}
+</script>
+	</head>
+
+	<body> 
+		<!-- <script src="zoom.js"></script> -->
+		<img src="images/ayah-syam.jpg" useMap="#imagemap"/>
+		<map name="imagemap">
+			<!--<area shape ="circle" coords ="315,301,15" href ="images/mata-kanan-syam.png" alt="Mercury"
+				  onmouseover="changeDesc('mata kanan syam')" /> -->
+		    <area shape ="circle" coords ="315,301,15" href ="detail-image.html" 
+				  onmouseover="changeDesc('mata kanan syam')" />
+				  
+		    <area shape ="circle" coords ="370,309,15" href ="detail-image.html"
+				  onmouseover="changeDesc('mata kiri syam')" />
+		</map>
+		
+		<p id="desc">Arahkan mouse untuk mengetahui deskripsi</p>
+		
+	</body>
+
+</html>
