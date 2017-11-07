@@ -5,23 +5,52 @@
 			function changeDesc(txt) {
 				document.getElementById("desc").innerHTML = txt;
 			}
-</script>
+			function showMessage(txt) {
+				alert(txt);
+			}
+			function changeImageSrc(id, src) {
+				document.getElementById(id).src = src;
+			}
+			function showDetail() {
+				document.getElementById("main_container").style.display = "none";
+				document.getElementById("detail_container").style.display = "block";
+			}
+			function showImageDetail(src) {
+				showDetail();
+				changeImageSrc("detail_image", src);
+			} 
+			function showMain() {
+				document.getElementById("main_container").style.display = "block";
+				document.getElementById("detail_container").style.display = "none";
+			}
+		</script>
+		<!-- <link rel="stylesheet" href="styles.css"> -->
 	</head>
 
 	<body> 
 		<!-- <script src="zoom.js"></script> -->
-		<img src="images/ayah-syam.jpg" useMap="#imagemap"/>
-		<map name="imagemap">
-			<!--<area shape ="circle" coords ="315,301,15" href ="images/mata-kanan-syam.png" alt="Mercury"
-				  onmouseover="changeDesc('mata kanan syam')" /> -->
-		    <area shape ="circle" coords ="315,301,15" href ="detail-image.html" 
-				  onmouseover="changeDesc('mata kanan syam')" />
+		<div id="main_container">
+			<img id="main_image" src="images/ayah-syam.jpg" useMap="#imagemap" class="centerImage" />
+			<p id="desc">Arahkan mouse untuk mengetahui deskripsi</p>
+		</div>
+
+		<div id="detail_container" style="display: none;">
+			<img id="back_image" onclick="showMain()" src="images/arrow-back-icon.png" width="30" height="30" />
+			<br />
+			<img id="detail_image" class="centerImage" /> 
+		</div>
+		<map name="imagemap">  
+		    <area shape ="circle" coords ="315,301,15"
+				  onmouseover="changeDesc('mata kanan syam')" onclick="showImageDetail('images/mata-kanan-syam.png')" />
 				  
-		    <area shape ="circle" coords ="370,309,15" href ="detail-image.html"
-				  onmouseover="changeDesc('mata kiri syam')" />
+		    <area shape ="circle" coords ="370,309,15" 
+				  onmouseover="changeDesc('mata kiri syam')" onclick="showImageDetail('images/mata-kiri-syam.png')"/>
+
+			<area shape ="rectangle" coords ="0,0,671,592" 
+				  onmouseover="changeDesc('Arahkan mouse untuk mengetahui deskripsi')" />
 		</map>
 		
-		<p id="desc">Arahkan mouse untuk mengetahui deskripsi</p>
+		
 		
 	</body>
 
