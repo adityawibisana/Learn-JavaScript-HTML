@@ -1,21 +1,40 @@
 function changeDesc(txt) {
 	document.getElementById("desc").innerHTML = txt;
 }
-function showMessage(txt) {
-	alert(txt);
+
+let currentLevel = 40;
+function switchTo(imgSrc, map, level) {
+	document.getElementById("main_image").src = imgSrc;
+	document.getElementById("main_image").useMap = map; 
+	currentLevel = level;
+	update();
 }
-function changeImageSrc(id, src) {
-	document.getElementById(id).src = src;
+
+function back() {
+	switch(currentLevel) {
+		case 200:
+			currentLevel = 40;
+			switchTo("images/ayah-syam.jpg", "#imagemap", currentLevel);
+			break;
+		case 400:
+			currentLevel = 200;
+			break;
+		default:
+			currentLevel = 40;
+			break;
+	}				
 }
-function showDetail() {
-	document.getElementById("main_container").style.display = "none";
-	document.getElementById("detail_container").style.display = "block";
-}
-function showImageDetail(src) {
-	showDetail();
-	changeImageSrc("detail_image", src);
-} 
-function showMain() {
-	document.getElementById("main_container").style.display = "block";
-	document.getElementById("detail_container").style.display = "none";
+
+function update() {
+	switch (currentLevel) {
+		case 40: 
+			document.getElementById("back_image").style.visibility = "hidden"; 
+			break;					
+		case 200:  
+			document.getElementById("back_image").style.visibility = "visible"; 
+			break; 
+		case 400: 
+			document.getElementById("back_image").style.visibility = "visible"; 
+			break; 
+	} 
 }

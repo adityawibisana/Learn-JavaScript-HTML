@@ -1,31 +1,36 @@
 <!DOCTYPE HTML>
 <html> 
 	<head>
-		<script src="js/common.js"></script>
-		<!-- <link rel="stylesheet" href="styles.css"> -->
+		<script src="js/common.js"></script> 
+		<link rel="stylesheet" href="styles.css">
 	</head>
 
 	<body> 		
-		<div id="main_container">
-			<img id="main_image" src="images/ayah-syam.jpg" useMap="#imagemap" class="centerImage" />
-			<p id="desc">Arahkan mouse untuk mengetahui deskripsi</p>
+		<div>
+			<img id="back_image" onclick="back()" src="images/arrow-back-icon.png" width="30" height="30" style="visibility: hidden" /> 
+			<br />
 		</div>
 
-		<div id="detail_container" style="display: none;">
-			<img id="back_image" onclick="showMain()" src="images/arrow-back-icon.png" width="30" height="30" />
-			<br />
-			<img id="detail_image" class="centerImage" /> 
-		</div>
+		<div id="main_container">
+			<img id="main_image" src="images/ayah-syam.jpg" useMap="#imagemap" />
+			<p id="desc">Arahkan mouse untuk mengetahui deskripsi</p>
+		</div>  
+
 		<map name="imagemap">  
 		    <area shape ="circle" coords ="315,301,15"
-				  onmouseover="changeDesc('mata kanan syam')" onclick="showImageDetail('images/mata-kanan-syam.png')" />
+				  onmouseover="changeDesc('mata kanan syam')" onclick="switchTo('images/mata-kanan-syam.png', '#imagemap2', 200)" />
 				  
 		    <area shape ="circle" coords ="370,309,15" 
-				  onmouseover="changeDesc('mata kiri syam')" onclick="showImageDetail('images/mata-kiri-syam.png')"/>
+				  onmouseover="changeDesc('mata kiri syam')" onclick="switchTo('images/mata-kiri-syam.png', '#imagemap2', 200)" />
 
 			<area shape ="rectangle" coords ="0,0,671,592" 
 				  onmouseover="changeDesc('Arahkan mouse untuk mengetahui deskripsi')" />
 		</map> 
+
+		<map name="imagemap2">  
+				<area shape ="circle" coords ="315,301,15"
+					  onmouseover="changeDesc('mata kanan syam')" onclick="showImageDetail('images/mata-kanan-syam.png')" /> 
+			</map> 
 	</body>
 
 </html>
