@@ -3,9 +3,9 @@ function changeDesc(txt) {
 }
 
 let currentLevel = 40;
-function switchTo(imgSrc, map, level) {
-	document.getElementById("main_image").src = imgSrc;
-	document.getElementById("main_image").useMap = map; 
+function switchTo(imgSrc, level) {
+	document.getElementById("main_image").src = imgSrc;	
+	document.getElementById("main_image").useMap = '#pembesaran' + level; 
 	currentLevel = level;
 	update();
 }
@@ -14,7 +14,7 @@ function back() {
 	switch(currentLevel) {
 		case 200:
 			currentLevel = 40;
-			switchTo("images/ayah-syam.jpg", "#imagemap", currentLevel);
+			switchTo("images/ayah-syam.jpg", currentLevel);
 			break;
 		case 400:
 			currentLevel = 200;

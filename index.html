@@ -12,25 +12,31 @@
 		</div>
 
 		<div id="main_container">
-			<img id="main_image" src="images/ayah-syam.jpg" useMap="#imagemap" />
+			<img id="main_image" src="images/ayah-syam.jpg" useMap="#pembesaran40" />
 			<p id="desc">Arahkan mouse untuk mengetahui deskripsi</p>
 		</div>  
 
-		<map name="imagemap">  
+		<map name="pembesaran40">  
 		    <area shape ="circle" coords ="315,301,15"
-				  onmouseover="changeDesc('mata kanan syam')" onclick="switchTo('images/mata-kanan-syam.png', '#imagemap2', 200)" />
+				  onmouseover="changeDesc('mata kanan syam')" onclick="switchTo('images/mata-kanan-syam.png', 200)" />
 				  
 		    <area shape ="circle" coords ="370,309,15" 
-				  onmouseover="changeDesc('mata kiri syam')" onclick="switchTo('images/mata-kiri-syam.png', '#imagemap2', 200)" />
+				  onmouseover="changeDesc('mata kiri syam')" onclick="switchTo('images/mata-kiri-syam.png', 200)" />
 
 			<area shape ="rectangle" coords ="0,0,671,592" 
 				  onmouseover="changeDesc('Arahkan mouse untuk mengetahui deskripsi')" />
 		</map> 
 
-		<map name="imagemap2">  
-				<area shape ="circle" coords ="315,301,15"
-					  onmouseover="changeDesc('mata kanan syam')" onclick="showImageDetail('images/mata-kanan-syam.png')" /> 
-			</map> 
+		<map name="pembesaran200">  
+			<area shape ="circle" coords ="315,301,15"
+				  onmouseover="changeDesc('mata kanan syam')" />   
+		</map> 
+
+		<map name="pembesaran400">
+			<area shape ="circle" coords ="315,301,15"
+			onmouseover="changeDesc('mata kanan syam')" />   
+		</map>
+
 	</body>
 
 </html>
