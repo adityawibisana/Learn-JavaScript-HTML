@@ -7,36 +7,32 @@
 
 	<body> 		
 		<div>
-			<img id="back_image" onclick="back()" src="images/arrow-back-icon.png" width="30" height="30" style="visibility: hidden" /> 
-			<br />
+			<img id="back_image" onclick="back()" src="images/arrow-back-icon.png" width="30" height="30" style="visibility: hidden" />   
 		</div>
 
 		<div id="main_container">
-			<img id="main_image" src="images/ayah-syam.jpg" useMap="#pembesaran40" />
-			<p id="desc">Arahkan mouse untuk mengetahui deskripsi</p>
-		</div>  
+			<div style="position:relative;"> 
+				<img id="main_image" src="images/ayah-syam.jpg" style="position:absolute" />
 
-		<map name="pembesaran40">  
-		    <area shape ="circle" coords ="315,301,15"
-				  onmouseover="changeDesc('mata kanan syam')" onclick="switchTo('images/mata-kanan-syam.png', 200)" />
-				  
-		    <area shape ="circle" coords ="370,309,15" 
-				  onmouseover="changeDesc('mata kiri syam')" onclick="switchTo('images/mata-kiri-syam.png', 200)" />
+				<div id="pembesaran40">
+					<div class="tooltip" style="left:308px; top:294px; width: 15px; height: 15px;" onmousedown="switchTo('images/mata-kanan-syam.png', 200)" > 
+						<span class="tooltiptext">Mata kanan syam</span>
+					</div> 
 
-			<area shape ="rectangle" coords ="0,0,671,592" 
-				  onmouseover="changeDesc('Arahkan mouse untuk mengetahui deskripsi')" />
-		</map> 
+					<div class="tooltip" style="left:363px; top:302px; width: 15px; height: 15px;" onmousedown="switchTo('images/mata-kanan-syam.png', 200)" > 
+						<span class="tooltiptext">Mata kiri syam</span>
+					</div> 
+				</div>
 
-		<map name="pembesaran200">  
-			<area shape ="circle" coords ="315,301,15"
-				  onmouseover="changeDesc('mata kanan syam')" />   
-		</map> 
+				<div id="pembesaran200" style="visibility: hidden">
+					
+				</div>
 
-		<map name="pembesaran400">
-			<area shape ="circle" coords ="315,301,15"
-			onmouseover="changeDesc('mata kanan syam')" />   
-		</map>
-
+				<div id="pembesaran400" style="visibility: hidden">
+					
+				</div>
+			</div> 
+		</div>     
 	</body>
 
 </html>
